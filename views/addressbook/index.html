@@ -1,3 +1,40 @@
 {{extend 'layout.html'}}
 
+<h2>Original</h2>
+
 {{=data}}
+
+<h2>Schön</h2>
+{{for row in data: }}
+
+	{{=row}} 	<br>
+{{pass}}
+
+<h2>Nur Name</h2>
+{{for row in data: }}
+
+	{{=row.name}} 	<br>
+{{pass}}
+
+<h2>Huiiii Table</h2>
+<table border="1">
+	<!-- Hier sorgen wir für Spaltenüberschriften -->
+	<thead>
+		<th>Name</th>
+		<th>Telephone Number</th>
+		<th>Email</th>
+	</thead>
+
+	<!-- Hier iterieren wir über die Rows -->
+	{{for row in data: }}
+
+		<!-- Und für jede Row geben wir -->
+		<!-- Name, Telephone und Email -->
+		<!-- aus -->
+		<tr>
+			<td>{{=row.name}}</td>
+			<td>{{=row.telephone}}</td>
+			<td>{{=row.email}}</td>
+		</tr>
+{{pass}}
+</table>
