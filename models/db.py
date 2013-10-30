@@ -48,6 +48,11 @@ auth.define_tables(username=False, signature=False)
 
 ## configure email
 mail = auth.settings.mailer
+
+#
+# 'a' or 'b' => 'a'
+# a = a or b => wenn in a etwas drin ist: a=a; sonst a=b
+# 
 mail.settings.server = 'logging' or 'smtp.gmail.com:587'
 mail.settings.sender = 'you@gmail.com'
 mail.settings.login = 'username:password'
@@ -81,5 +86,29 @@ use_janrain(auth, filename='private/janrain.key')
 
 ## after defining tables, uncomment below to enable auditing
 # auth.enable_record_versioning(db)
+
+# contacts ist der table name
+db.define_table('contacts', 
+    # hier kommt ein automatischer column 'id' hin
+
+    Field('name', 'string', requires=IS_NOT_EMPTY(), label="First- and Lastname"),
+    Field('telephone', 'string'),
+    # IS_EMAIL ist ein validator
+    Field('email', 'string', requires=IS_EMAIL()), 
+    # datetime = date + time
+    # default = default wert wenn bei einem insert nicht angegeben
+    Field('modified', 'datetime', default=request.now) 
+)
+
+
+
+
+
+
+
+
+
+
+
 
 
