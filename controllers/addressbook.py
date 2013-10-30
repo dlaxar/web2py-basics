@@ -25,7 +25,7 @@ def index():
 #    return dict(form=form)
 
 def add():
-	form = SQLFORM(db.contacts)
+	form = SQLFORM(db.contacts, request.vars.get('p'))
 
 	if form.process().accepted:
 		response.flash = "Your data has been accepted, Master!"
@@ -35,7 +35,6 @@ def add():
 		response.flash = "You want to add contacts? Sure, Master!"
 
 	return dict(form=form)
-
 
 
 
