@@ -27,6 +27,13 @@ def index():
 def add():
 	form = SQLFORM(db.contacts)
 
+	if form.process().accepted:
+		response.flash = "Your data has been accepted, Master!"
+	elif form.errors:
+		response.flash = "I'm afraid something went wrong, Master!"
+	else:
+		response.flash = "You want to add contacts? Sure, Master!"
+
 	return dict(form=form)
 
 
