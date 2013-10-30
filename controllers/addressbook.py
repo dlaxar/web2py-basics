@@ -25,6 +25,10 @@ def index():
 #    return dict(form=form)
 
 def add():
+	# weißenböck = badass
+	# 
+	# request.vars.get('p') => http://..../add.html?p=something
+	# wenn p nicht angegeben wird => None
 	form = SQLFORM(db.contacts, request.vars.get('p'))
 
 	if form.process().accepted:

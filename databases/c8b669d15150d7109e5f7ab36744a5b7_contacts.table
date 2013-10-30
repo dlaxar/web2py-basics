@@ -1,5 +1,5 @@
 (dp1
-S'telephone'
+S'name'
 p2
 (dp3
 S'length'
@@ -10,7 +10,7 @@ p5
 I00
 sS'sortable'
 p6
-I3
+I2
 sS'sql'
 p7
 S'CHAR(512)'
@@ -22,7 +22,7 @@ sS'type'
 p10
 S'string'
 p11
-ssS'email'
+ssS'area'
 p12
 (dp13
 g4
@@ -30,7 +30,7 @@ I512
 sg5
 I00
 sg6
-I4
+I7
 sg7
 S'CHAR(512)'
 p14
@@ -38,7 +38,7 @@ sg9
 I00
 sg10
 g11
-ssS'id'
+ssS'telephone'
 p15
 (dp16
 g4
@@ -46,14 +46,14 @@ I512
 sg5
 I00
 sg6
-I1
+I3
 sg7
-S'INTEGER PRIMARY KEY AUTOINCREMENT'
+S'CHAR(512)'
 p17
 sg9
 I00
 sg10
-g15
+g11
 ssS'modified'
 p18
 (dp19
@@ -71,7 +71,7 @@ I00
 sg10
 S'datetime'
 p21
-ssS'name'
+ssS'email'
 p22
 (dp23
 g4
@@ -79,7 +79,7 @@ I512
 sg5
 I00
 sg6
-I2
+I4
 sg7
 S'CHAR(512)'
 p24
@@ -87,4 +87,38 @@ sg9
 I00
 sg10
 g11
+ssS'id'
+p25
+(dp26
+g4
+I512
+sg5
+I00
+sg6
+I1
+sg7
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p27
+sg9
+I00
+sg10
+S'id'
+p28
+ssS'friend'
+p29
+(dp30
+g4
+I512
+sg5
+I00
+sg6
+I6
+sg7
+S'CHAR(1)'
+p31
+sg9
+I00
+sg10
+S'boolean'
+p32
 ss.

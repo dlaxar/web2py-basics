@@ -97,7 +97,16 @@ db.define_table('contacts',
     Field('email', 'string', requires=IS_EMAIL()), 
     # datetime = date + time
     # default = default wert wenn bei einem insert nicht angegeben
-    Field('modified', 'datetime', default=request.now) 
+    Field('modified', 'datetime', default=request.now), 
+    # boolean wird zur checkbox
+    Field('friend', 'boolean', default=False),
+    # IS_IN_SET() wird zur select box
+    Field('area', 'string', 
+        requires=IS_IN_SET(
+                        ['Wien', 'Niederösterreich', 'Burgenland', 'Kärnten'],
+                        multiple=True # multiple? -> multiple select box
+                         ) # end IS_IN_SET
+    ) #end field
 )
 
 
