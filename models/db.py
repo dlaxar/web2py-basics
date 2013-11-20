@@ -92,7 +92,7 @@ db.define_table('contacts',
     # hier kommt ein automatischer column 'id' hin
 
     Field('name', 'string', requires=IS_NOT_EMPTY(), label="First- and Lastname"),
-    Field('telephone', 'string'),
+    Field('telephone', 'list:string'),
     # IS_EMAIL ist ein validator
     Field('email', 'string', requires=IS_EMAIL()), 
     # datetime = date + time

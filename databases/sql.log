@@ -67,3 +67,4 @@ ALTER TABLE contacts ADD area CHAR(512);
 timestamp: 2013-10-30T09:35:58.572118
 ALTER TABLE contacts ADD friend CHAR(1);
 success!
+success!
