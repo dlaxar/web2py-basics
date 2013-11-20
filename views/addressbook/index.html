@@ -33,7 +33,10 @@
 		<!-- Name, Telephone und Email -->
 		<!-- aus -->
 		<tr>
-			<td>{{=row.name}}</td>
+			<td>{{=A(row.name, _href=URL(
+						'addressbook',
+						'add',
+						vars=dict(p=row.id)))}}</td>
 			<!-- Sogenannte "List Comprehension" -->
 			<!-- row.telephone ist ein array -->
 			<!-- wir "joinen" alle Element mit ', ' -->
