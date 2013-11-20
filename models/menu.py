@@ -29,8 +29,8 @@ response.google_analytics_id = None
 response.menu = [
     # Titel   , kp   , Link zu der Seite      , Subseiten
     (T('Home'), False, URL('default', 'index'), []), 
-    (T('Addressbook'), False, URL('addresbook', 'index'), [
-      (T('Add Contact'), False, URL('addresbook', 'add'), [])
+    (T('Addressbook'), False, URL('addressbook', 'index'), [
+      (T('Add Contact'), False, URL('addressbook', 'add'), [])
     ]),
 ]
 
