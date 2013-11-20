@@ -23,8 +23,15 @@ response.google_analytics_id = None
 ## this is the main application menu add/remove items as required
 #########################################################################
 
+# T ist die Translation-Klasse
+# Es wird im Hintergrund ein Mapping für die Sprache
+# angelegt
 response.menu = [
-    (T('Home'), False, URL('default', 'index'), [])
+    # Titel   , kp   , Link zu der Seite      , Subseiten
+    (T('Home'), False, URL('default', 'index'), []), 
+    (T('Addressbook'), False, URL('addresbook', 'index'), [
+      (T('Add Contact'), False, URL('addresbook', 'add'), [])
+    ]),
 ]
 
 DEVELOPMENT_MENU = True
