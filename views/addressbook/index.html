@@ -23,6 +23,7 @@
 		<th>Name</th>
 		<th>Telephone Number</th>
 		<th>Email</th>
+		<th>Edit</th>
 	</thead>
 
 	<!-- Hier iterieren wir über die Rows -->
@@ -33,8 +34,29 @@
 		<!-- aus -->
 		<tr>
 			<td>{{=row.name}}</td>
-			<td>{{=row.telephone}}</td>
+			<!-- Sogenannte "List Comprehension" -->
+			<!-- row.telephone ist ein array -->
+			<!-- wir "joinen" alle Element mit ', ' -->
+			<td>{{=', '.join(row.telephone)}}</td>
 			<td>{{=row.email}}</td>
+			<!-- Boom Zack -->
+			<td>
+				{{= 
+					# dieser Helper generiert ein <a href="..."></a>
+					A(T('Edit'), 
+					# das generiert das HREF
+					# (auch das ist ein Helper)
+					_href=URL(
+						# controller
+						'addressbook',
+
+						# action 
+						'add', 
+
+						# zusätzliche variablen (?p=...)
+						vars=dict(p=row.id)))
+				}}
+			</td>
 		</tr>
 {{pass}}
 </table>
