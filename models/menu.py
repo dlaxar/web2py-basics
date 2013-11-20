@@ -27,7 +27,7 @@ response.google_analytics_id = None
 # Es wird im Hintergrund ein Mapping für die Sprache
 # angelegt
 response.menu = [
-    # Titel   , kp   , Link zu der Seite      , Subseiten
+    # Titel   , kp   , Link zu der Seite      , Subseiten, Flag (ob angezeigt oder nicht)
     (T('Home'), False, URL('default', 'index'), []), 
     (T('Addressbook'), False, URL('addressbook', 'index'), [
       (T('Add Contact'), False, URL('addressbook', 'add'), [])
