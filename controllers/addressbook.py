@@ -31,6 +31,10 @@ def add():
 	# wenn p nicht angegeben wird => None
 	form = SQLFORM(db.contacts, request.vars.get('p'))
 
+	# diese methode wird 2x aufgerufen
+	# 1) um das formular anzuzeigen
+	# 2) um das formular zu verarbeiten -> form.process() wird aufgerufen
+
 	if form.process().accepted:
 		response.flash = "Your data has been accepted, Master!"
 	elif form.errors:
