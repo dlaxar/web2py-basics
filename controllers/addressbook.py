@@ -44,6 +44,12 @@ def add():
 
 	return dict(form=form)
 
+def delete():
+	db(db.contacts.id == request.vars.get('p')).delete()
+
+	session.flash = T('We nuked that, Sir!')
+	redirect(URL('addressbook', 'index'))
+
 
 
 

@@ -58,7 +58,23 @@
 
 						# zusätzliche variablen (?p=...)
 						vars=dict(p=row.id)))
-				}}
+				}}, 
+				{{= 
+					# dieser Helper generiert ein <a href="..."></a>
+					A(T('Delete'), 
+					# das generiert das HREF
+					# (auch das ist ein Helper)
+					_href=URL(
+						# controller
+						'addressbook',
+
+						# action 
+						'delete', 
+
+						# zusätzliche variablen (?p=...)
+						vars=dict(p=row.id)))
+				}}, 
+				
 			</td>
 		</tr>
 {{pass}}
